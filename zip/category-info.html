@@ -28,23 +28,25 @@
   <main role="main">
     <div class="container mt-5">
       <div class="text-center p-4">
-        <h2>Descripción del producto</h2>
-        <p class="lead">Encontrarás aquí toda la información del producto seleccionado.</p>
+        <h2>Descripción de la categoría</h2>
+        <p class="lead">Encontrarás aquí toda la información de la categoría seleccionada.</p>
+        <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, cualquiera sea la categoría
+          seleccionada previamente, siempre se visualizará la presente: <strong>Autos</strong>.</p>
       </div>
       <h3 id="categoryName"></h3>
       <hr class="my-3">
       <dl>
-        <dt>Descripción:</dt>
+        <dt>Descripción</dt>
         <dd>
           <p id="categoryDescription"></p>
         </dd>
 
-        <dt>Precio:</dt>
+        <dt>Cantidad de productos en la categoría</dt>
         <dd>
           <p id="productCount"></p>
         </dd>
 
-        <dt>Categoría:</dt>
+        <dt>Criterio para incluir productos en esta categoría</dt>
         <dd>
           <p id="productCriteria"></p>
         </dd>
@@ -55,14 +57,6 @@
           </div>
         </dd>
       </dl>
-      <div id="comments"></div>
-      <br>
-      <h4>Dejar comentario:</h4>
-      <input type="text" placeholder="Comentar" >
-     <button>Publicar</button>
-      <br><br>
-      <input type="range" id="rangeInput" name="rangeInput" min="0" max="5" value="0" oninput="amount.value=rangeInput.value">                                                       
-      <output id="amount" name="amount" for="rangeInput">0</output>
       <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
     </div>
   </main>
@@ -86,7 +80,7 @@
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
-  <script src="js/product-info.js"></script>
+  <script src="js/category-info.js"></script>
 </body>
 
 </html>
