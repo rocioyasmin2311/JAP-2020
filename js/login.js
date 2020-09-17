@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function(e){
    e.preventDefault();
    let user = document.getElementById("inputEmail").value;
    let password = document.getElementById("inputPassword").value;
-   checkuser ({'http://localhost:8080/auth', {
+   checkuser ('http://localhost:8081/auth', {
        user,
        password
    });
@@ -24,10 +24,10 @@ function checkuser(url, data) {
          'Content-Type': 'application/json'
        }
      }).then(res => res.json())
-     .catch(error => console.error('Error:', error))
+     .catch(error => {
      alert('Usuario y/o contraseña incorrecta');
-    });
-     .then(response => console.log('Success:', response)
+    }).then(response => {
+    console.log('Success:', response)
      localStorage.setItem("email", data.user);
      localStorage.setItem("token", response.token);
      window.location.href = 'index.html';

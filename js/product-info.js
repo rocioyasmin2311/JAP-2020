@@ -52,6 +52,8 @@ document.addEventListener("DOMContentLoaded", function(e){
         });
     });
 
+    let related = [];
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
@@ -65,14 +67,22 @@ document.addEventListener("DOMContentLoaded", function(e){
             let categoryDescriptionHTML = document.getElementById("categoryDescription");
             let productCountHTML = document.getElementById("productCount");
             let productCriteriaHTML = document.getElementById("productCriteria");
-        
+            
             categoryNameHTML.innerHTML = category.name;
             categoryDescriptionHTML.innerHTML = category.description;
             productCountHTML.innerHTML = 'U$D' + ' ' + category.cost;
             productCriteriaHTML.innerHTML = category.category;
-
+            related.innerHTML = category.relatedProducts[0];
             //Muestro las imagenes en forma de galería
             showImagesGallery(category.images);
+
+            getJSONData(PRODUCTS_URL).then(function(resultObj){
+                if (resultObj.status === "ok"){
+                var product = resultObj.data;
+                showImagesGallery(product[related].imgSrc);
+            }
+            })
         }
     });
+    
 });
