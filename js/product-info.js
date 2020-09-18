@@ -72,7 +72,6 @@ document.addEventListener("DOMContentLoaded", function(e){
             categoryDescriptionHTML.innerHTML = category.description;
             productCountHTML.innerHTML = 'U$D' + ' ' + category.cost;
             productCriteriaHTML.innerHTML = category.category;
-            related.innerHTML = category.relatedProducts[0];
             //Muestro las imagenes en forma de galería
             showImagesGallery(category.images);
 
